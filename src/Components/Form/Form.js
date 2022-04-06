@@ -3,19 +3,13 @@ import "../Form/form.css";
 import axios from "axios";
 
 const Form = () => {
-    const [inputs, setInputs] = useState({
-        category: "",
-        title: "",
-        body: ""
-    });
+    const [inputs, setInputs] = useState({category: "", title: "", body: ""});
 
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setInputs(values => ({...values, [name]: value}));
     }
-
-    
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,25 +19,22 @@ const Form = () => {
             url: "http://localhost/api/post/create.php",
             data: JSON.stringify(inputs)
         }).then((response) => {
+            setInputs({category: "", title: "", body: ""});
             if(response.data.status === 'success') {
-                console.log("Task Created")
-                setInputs({category: "", title: "", body: ""});
+                console.log("Task Created");
+                //Add success pop up
             } else if(response.data.status === 'fail') {
-                console.log("There was an issue creating your task")
+                console.log("There was an issue creating your task");
+                //Add failure popup
             }
         })
     }
 
-    const resetForm = () => {
-        
-    }
-
     return (
         <form>
-            <div>Look at me, I'm a form!</div>
-            <input type="text" name="category" onChange={handleChange} placeholder="category"/>
-            <input type="text" name="title" onChange={handleChange} placeholder="title"/>
-            <input type="text" name="body" onChange={handleChange} placeholder="body"/>
+            <input type="text" name="category" onChange={handleChange} placeholder="category" value={inputs.category}/>
+            <input type="text" name="title" onChange={handleChange} placeholder="title" value={inputs.title}/>
+            <input type="text" name="body" onChange={handleChange} placeholder="body" value={inputs.body}/>
             <button type="submit" onClick={handleSubmit}>Add Task</button>
         </form>
     )

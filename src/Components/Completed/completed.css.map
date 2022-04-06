@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACb,MAAM,EAAE,aAAa;EACrB,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "completed.scss"
+    ],
+    "names": [],
+    "file": "completed.css"
+}

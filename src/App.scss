@@ -1,0 +1,15 @@
+@import "./Components/Helpers/shared.scss";
+
+.App {
+    // text-align: center;
+}
+
+.app-main-outer {
+    background-color: $nearly-white;
+    .app-main-inner {
+        display: flex;
+        // justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+    }
+}

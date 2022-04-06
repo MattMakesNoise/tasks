@@ -1,0 +1,72 @@
+//============================== COLOURS ==============================//
+$nearly-black: #504F54;
+$dark-blue: #132257;
+$nearly-white: #F1F1E6;
+$very-light-grey: #efefef;
+$light-grey: #cdcdcd;
+
+//============================== MIXINS ==============================//
+@mixin borders {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+@mixin link {
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+}
+@mixin button {
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: .5rem;
+    font-size: 1rem;
+    &:hover {
+        transform: scale(1.01);
+    }
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+//============================== BREAKPOINTS =========================//
+$breakpoints: (
+    "sm": 485px,
+    "md": 768px,
+    "lg": 990px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
+@mixin sm {
+    @media (min-width: map-get($breakpoints, "sm")) {
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: map-get($breakpoints, "md")) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: map-get($breakpoints, "lg")) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: map-get($breakpoints, "xl")) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media (min-width: map-get($breakpoints, "xxl")) {
+        @content;
+    }
+}
+@mixin breakpoint($bp: 0) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
