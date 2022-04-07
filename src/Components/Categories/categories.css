@@ -29,6 +29,10 @@
   display: flex;
 }
 
+.categories-outer .hide {
+  display: none;
+}
+
 .categories-outer .complete,
 .categories-outer .delete {
   text-decoration: none;

@@ -17,6 +17,9 @@
             display: flex;
         }
     }
+    .hide {
+        display: none;
+    }
     .complete,
     .delete {
         @include button;
