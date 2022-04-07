@@ -10,6 +10,7 @@ class Task {
     public $category;
     public $created_at;
     public $body;
+    public $complete;
 
     //constructor with db
     public function __construct($db) {
@@ -53,6 +54,7 @@ class Task {
         $this->category_id = $row['category_id'];
         $this->category = $row['category'];
         $this->created_at = $row['created_at'];
+        $this->complete = $row['complete'];
     }
 
     //Create Task
@@ -87,7 +89,7 @@ class Task {
     //Update Task
     public function update() {
         //Create query
-        $query = 'UPDATE ' . $this->table . ' SET title = :title, body = :body, category = :category WHERE id = :id';
+        $query = 'UPDATE ' . $this->table . ' SET title = :title, body = :body, category = :category, complete = 1 WHERE id = :id';
 
         //Prepared statement
         $stmt = $this->conn->prepare($query);
@@ -103,6 +105,7 @@ class Task {
         $stmt->bindParam(':body', $this->body);
         $stmt->bindParam(':category', $this->category);
         $stmt->bindParam(':id', $this->id);
+        $stmt->bindParam(':complete', $this->complete);
 
         //execute query
         if($stmt->execute()) {

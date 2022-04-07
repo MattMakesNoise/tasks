@@ -32,7 +32,8 @@
                 'title' => $title,
                 'body' => html_entity_decode($body),
                 'category' => $category,
-                'category_id' => $category_id
+                'category_id' => $category_id,
+                'complete' => $complete
             );
 
             //Push to "data"

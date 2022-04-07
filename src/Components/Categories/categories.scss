@@ -1,4 +1,33 @@
+@import "../Helpers/shared.scss";
+
 .categories-outer {
-    border: 1px solid red;
+    @include borders;
+    border: 1px solid $light-grey;
     margin: 1rem;
+    padding: .5rem 1rem;
+    background-color: peachpuff;
+    .todo {
+        margin: 1rem .5rem;
+        padding: .5rem;
+        display: flex;
+        justify-content: space-between;
+        background-color: $nearly-white;
+        @include borders;
+        .complete-delete {
+            display: flex;
+        }
+    }
+    .complete,
+    .delete {
+        @include button;
+        @include borders;
+        margin: 0 .5rem;
+        color: $nearly-white;
+    }
+    .complete {
+        background-color: green;
+    }
+    .delete {
+        background-color: red;
+    }
 }

@@ -1,26 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
+import useGet from "../Fetches/useGet";
 import "./categories.css";
-import axios from "axios";
 
 const Categories = () => {
-    const [todos, setTodos] = useState([]);
+    const {data, loading, error} = useGet();
 
-    const getTodos = () => {
-        axios({
-            method: "GET",
-            url: "http://localhost/api/post/read.php",
-            data: (todos)
-        }).then((response) => {
-            console.log(response);
-            setTodos(response);
-        })
+    let todos;
+
+    if(loading) return <div>Loading...</div>;
+
+    if(error) console.log(error);
+
+    if(data) {
+        todos = data.data;
+        console.log(todos);
     }
 
-    getTodos();
-
-
     return (
-        <div className="categories-outer">I am the categories with todos</div>
+        <div className="categories-outer">
+        {todos && todos.map((todo) => {
+            return(
+                <div className="todo">
+                    <div className="todo-body">
+                        <div>{todo.title}</div>
+                        <div>{todo.body}</div>
+                    </div>
+                    <div className="complete-delete">
+                        <button className="complete"><i className="fas fa-check"></i></button>
+                        <button className="delete"><i className="fas fa-trash-can"></i></button>
+                    </div>
+                </div>
+            )
+        })}
+        </div>
     )
 }
 

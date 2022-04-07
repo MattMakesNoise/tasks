@@ -24,6 +24,7 @@
     $task->title = $data->title;
     $task->body = $data->body;
     $task->category = $data->category;
+    $task->complete = $data->complete;
 
     //Update task
     if($task->update()) {

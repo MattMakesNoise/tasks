@@ -1,5 +1,66 @@
 .categories-outer {
-  border: 1px solid red;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #cdcdcd;
   margin: 1rem;
+  padding: .5rem 1rem;
+  background-color: peachpuff;
+}
+
+.categories-outer .todo {
+  margin: 1rem .5rem;
+  padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #F1F1E6;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.categories-outer .todo .complete-delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.categories-outer .complete,
+.categories-outer .delete {
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 .5rem;
+  color: #F1F1E6;
+}
+
+.categories-outer .complete:hover,
+.categories-outer .delete:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+}
+
+.categories-outer .complete:active,
+.categories-outer .delete:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.categories-outer .complete {
+  background-color: green;
+}
+
+.categories-outer .delete {
+  background-color: red;
 }
 /*# sourceMappingURL=categories.css.map */
