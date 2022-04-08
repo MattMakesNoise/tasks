@@ -4,8 +4,9 @@ import "./categories.css";
 
 const Categories = () => {
     const {data, loading, error} = useGet();
-
+    // let put = {};
     const [done, setDone] = useState([]);
+    console.log(done);
 
     let todos;
 
@@ -30,14 +31,14 @@ const Categories = () => {
                                 <div>{todo.body}</div>
                             </div>
                             <div className="complete-delete">
-                                <button className="complete" onClick={() => setDone(done => [todo, ...done])}><i className="fas fa-check"></i></button>
+                                <button className="complete" onClick={() => setDone(done => [todo.title, todo.body, todo.category, ...done])}><i className="fas fa-check"></i></button>
+                                {/* <button className="complete" onClick={put = {todo.title, todo.body, todo.category}}><i className="fas fa-check"></i></button> */}
                                 <button className="delete"><i className="fas fa-trash-can"></i></button>
                             </div>
                         </div> :
                         <div className="todo hide"></div>}
                 </div>
             )
-
         })}
         </div>
     )

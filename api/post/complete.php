@@ -21,19 +21,16 @@
     //Set ID to update
     $task->id = $data->id;
 
-    $task->title = $data->title;
-    $task->body = $data->body;
-    $task->category = $data->category;
     // $task->complete = $data->complete;
 
-    //Update task
-    if($task->update()) {
+    //Complete task
+    if($task->complete()) {
         echo json_encode(
-            array('message' => 'Task Updated')
+            array('message' => 'Task Completed')
         );
     } else {
         echo json_encode(
-            array('message' => 'Task Not Updated')
+            array('message' => 'Task Not Completed')
         );
     }
 

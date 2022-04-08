@@ -4,7 +4,7 @@ class Task {
     private $conn;
     private $table = 'task_list';
 
-    //post properties
+    //task properties
     public $id;
     public $category_id;
     public $category;
@@ -60,7 +60,7 @@ class Task {
     //Create Task
     public function create() {
         //Create query
-        $query = 'INSERT INTO ' . $this->table . ' SET title = :title, body = :body, category = :category';
+        $query = 'INSERT INTO ' . $this->table . ' SET title = :title, body = :body, category = :category, complete = 0';
 
         //Prepare statement
         $stmt = $this->conn->prepare($query);
@@ -89,7 +89,7 @@ class Task {
     //Update Task
     public function update() {
         //Create query
-        $query = 'UPDATE ' . $this->table . ' SET title = :title, body = :body, category = :category, complete = 1 WHERE id = :id';
+        $query = 'UPDATE ' . $this->table . ' SET title = :title, body = :body, category = :category WHERE id = :id';
 
         //Prepared statement
         $stmt = $this->conn->prepare($query);
@@ -105,7 +105,31 @@ class Task {
         $stmt->bindParam(':body', $this->body);
         $stmt->bindParam(':category', $this->category);
         $stmt->bindParam(':id', $this->id);
-        $stmt->bindParam(':complete', $this->complete);
+
+        //execute query
+        if($stmt->execute()) {
+            return true;
+        } 
+        //Print error if something goes wrong
+        printf("Error: %s.\n", $stmt->error);
+
+        return false;
+
+    }
+
+    //Complete Task
+    public function complete() {
+        //Create query
+        $query = 'UPDATE ' . $this->table . ' SET complete = 1 WHERE id = :id';
+
+        //Prepared statement
+        $stmt = $this->conn->prepare($query);
+
+        //Clean data
+        $this->id = htmlspecialchars(strip_tags($this->id));
+
+        //Bind data
+        $stmt->bindParam(':id', $this->id);
 
         //execute query
         if($stmt->execute()) {
