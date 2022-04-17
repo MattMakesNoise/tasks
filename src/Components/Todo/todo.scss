@@ -1,0 +1,33 @@
+@import "../Helpers/shared.scss";
+
+.todo {
+    margin: 1rem .5rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: $nearly-white;
+    @include borders;
+    .complete-delete {
+        display: flex;
+    }
+}
+.hide {
+    display: none;
+}
+.complete,
+.delete {
+    @include button;
+    @include borders;
+    margin: 0 .5rem;
+    color: $nearly-white;
+}
+.complete {
+    background-color: green;
+}
+.delete {
+    background-color: red;
+}
+.strikethrough {
+    text-decoration: line-through;
+    color: $nearly-black;
+}

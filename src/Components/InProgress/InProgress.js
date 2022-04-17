@@ -1,17 +1,19 @@
 import React, { useContext } from "react";
 import Todo from "../Todo/Todo";
-import "./completed.css";
+import "./inprogress.css";
 import { TodosContext } from "../Context/TodosContext";
 
-const Completed = () => {
-    const [todos, setTodos] = useContext(TodosContext);
+const InProgress = () => {
     // let todos = props.list;
+    // const { todoList, setTodoList} = useContext(TodosContext);
+    const [todos, setTodos] = useContext(TodosContext);
+    // console.log(todoList);
 
     return (
-        <div className="completed-outer">
+        <div className="inprogress-outer">
             {todos && todos.map((task) => {
                 return (
-                    task.complete === "1" 
+                    task.complete === "0" 
                         ? <Todo key={task.id} title={task.title} body={task.body} completed={task.complete} /> 
                         : <></>
                 )
@@ -20,4 +22,4 @@ const Completed = () => {
     )
 }
 
-export default Completed;
+export default InProgress;

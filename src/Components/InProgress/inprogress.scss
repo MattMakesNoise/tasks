@@ -1,6 +1,6 @@
 @import "../Helpers/shared.scss";
 
-.completed-outer {
+.inprogress-outer {
     @include borders;
     border: 1px solid $light-grey;
     margin: 1rem;

@@ -1,4 +1,4 @@
-.completed-outer {
+.inprogress-outer {
   border-radius: 5px;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -7,4 +7,4 @@
   padding: .5rem 1rem;
   background-color: peachpuff;
 }
-/*# sourceMappingURL=completed.css.map */
+/*# sourceMappingURL=inprogress.css.map */
