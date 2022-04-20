@@ -10,7 +10,7 @@ const Categories = () => {
     // console.log(done);
     
     const makeComplete = (id) => {
-        axios.put("http://localhost/api/post/complete.php", {id: id});
+        axios.put("http://localhost/api/complete.php", {id: id});
         console.log(id);
     }
 

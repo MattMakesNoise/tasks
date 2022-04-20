@@ -1,8 +1,11 @@
+@import "../Helpers/shared.scss";
+
 header {
     height: 100px;
-    background-color: aqua;
-    color-adjust: black;
+    background-color: $dark-blue;
+    color: $nearly-black;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }

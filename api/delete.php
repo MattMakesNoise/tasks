@@ -2,11 +2,11 @@
     //Headers
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
-    header('Access-Control-Allow-Methods: POST');
+    header('Access-Control-Allow-Methods: DELETE');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-    include_once '../../config/Database.php';
-    include_once '../../models/Task.php';
+    include_once '../config/Database.php';
+    include_once '../models/Task.php';
 
     //Instantiate DB and connect
     $database = new Database();
@@ -18,18 +18,17 @@
     //Get raw posted data
     $data = json_decode(file_get_contents("php://input"));
 
-    $task->title = $data->title;
-    $task->body = $data->body;
-    $task->category = $data->category;
+    //Set ID to update
+    $task->id = $data->id;
 
-    //Create task
-    if($task->create()) {
+    //Delete task
+    if($task->delete()) {
         echo json_encode(
-            array('message' => 'Task Created')
+            array('message' => 'Task Deleted')
         );
     } else {
         echo json_encode(
-            array('message' => 'Task Not Created')
+            array('message' => 'Task Not Deleted')
         );
     }
 

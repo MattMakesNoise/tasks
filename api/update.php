@@ -5,8 +5,8 @@
     header('Access-Control-Allow-Methods: PUT');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With');
 
-    include_once '../../config/Database.php';
-    include_once '../../models/Task.php';
+    include_once '../config/Database.php';
+    include_once '../models/Task.php';
 
     //Instantiate DB and connect
     $database = new Database();
@@ -22,8 +22,8 @@
     $task->id = $data->id;
 
     $task->title = $data->title;
-    $task->body = $data->body;
-    $task->category = $data->category;
+    // $task->body = $data->body;
+    // $task->category = $data->category;
     // $task->complete = $data->complete;
 
     //Update task

@@ -3,8 +3,8 @@
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
 
-    include_once '../../config/Database.php';
-    include_once '../../models/Task.php';
+    include_once '../config/Database.php';
+    include_once '../models/Task.php';
 
     //Instantiate DB and connect
     $database = new Database();
@@ -30,9 +30,9 @@
             $task_item = array(
                 'id' => $id,
                 'title' => $title,
-                'body' => html_entity_decode($body),
-                'category' => $category,
-                'category_id' => $category_id,
+                // 'body' => html_entity_decode($body),
+                // 'category' => $category,
+                // 'category_id' => $category_id,
                 'complete' => $complete
             );
 

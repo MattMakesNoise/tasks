@@ -6,10 +6,11 @@ class Task {
 
     //task properties
     public $id;
-    public $category_id;
-    public $category;
+    public $title;
+    // public $category_id;
+    // public $category;
     public $created_at;
-    public $body;
+    // public $body;
     public $complete;
 
     //constructor with db
@@ -50,9 +51,9 @@ class Task {
 
         //Set properties
         $this->title = $row['title'];
-        $this->body = $row['body'];
-        $this->category_id = $row['category_id'];
-        $this->category = $row['category'];
+        // $this->body = $row['body'];
+        // $this->category_id = $row['category_id'];
+        // $this->category = $row['category'];
         $this->created_at = $row['created_at'];
         $this->complete = $row['complete'];
     }
@@ -60,20 +61,20 @@ class Task {
     //Create Task
     public function create() {
         //Create query
-        $query = 'INSERT INTO ' . $this->table . ' SET title = :title, body = :body, category = :category, complete = 0';
+        $query = 'INSERT INTO ' . $this->table . ' SET title = :title, complete = 0';
 
         //Prepare statement
         $stmt = $this->conn->prepare($query);
 
         //Clean data
         $this->title = htmlspecialchars(strip_tags($this->title));
-        $this->body = htmlspecialchars(strip_tags($this->body));
-        $this->category = htmlspecialchars(strip_tags($this->category));
+        // $this->body = htmlspecialchars(strip_tags($this->body));
+        // $this->category = htmlspecialchars(strip_tags($this->category));
         
         //Bind data
         $stmt->bindParam(':title', $this->title);
-        $stmt->bindParam(':body', $this->body);
-        $stmt->bindParam(':category', $this->category);
+        // $stmt->bindParam(':body', $this->body);
+        // $stmt->bindParam(':category', $this->category);
 
         //execute query
         if($stmt->execute()) {
@@ -89,21 +90,21 @@ class Task {
     //Update Task
     public function update() {
         //Create query
-        $query = 'UPDATE ' . $this->table . ' SET title = :title, body = :body, category = :category WHERE id = :id';
+        $query = 'UPDATE ' . $this->table . ' SET title = :title WHERE id = :id';
 
         //Prepared statement
         $stmt = $this->conn->prepare($query);
 
         //Clean data
         $this->title = htmlspecialchars(strip_tags($this->title));
-        $this->body = htmlspecialchars(strip_tags($this->body));
-        $this->category = htmlspecialchars(strip_tags($this->category));
+        // $this->body = htmlspecialchars(strip_tags($this->body));
+        // $this->category = htmlspecialchars(strip_tags($this->category));
         $this->id = htmlspecialchars(strip_tags($this->id));
 
         //Bind data
         $stmt->bindParam(':title', $this->title);
-        $stmt->bindParam(':body', $this->body);
-        $stmt->bindParam(':category', $this->category);
+        // $stmt->bindParam(':body', $this->body);
+        // $stmt->bindParam(':category', $this->category);
         $stmt->bindParam(':id', $this->id);
 
         //execute query

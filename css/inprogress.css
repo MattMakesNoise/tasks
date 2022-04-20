@@ -1,0 +1,10 @@
+.inprogress-outer {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #cdcdcd;
+  margin: 1rem;
+  padding: .5rem 1rem;
+  background-color: peachpuff;
+}
+/*# sourceMappingURL=inprogress.css.map */

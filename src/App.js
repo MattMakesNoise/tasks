@@ -26,11 +26,11 @@ function App() {
             <Header />
             <div className='app-main-outer'>
                 <div className='app-main-inner'>
-                    <TodosProvider>
+                    {/* <TodosProvider>
                         <Completed/>
                         <Form />
                         <InProgress/>
-                    </TodosProvider>
+                    </TodosProvider> */}
                 </div>
             </div>
             

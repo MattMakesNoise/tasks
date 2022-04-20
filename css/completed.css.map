@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,gBAAgB,CAAC;ECOb,aAAa,EAAE,GAAG;EAClB,UAAU,EAAE,CAAC,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,kBAAe;EDNvC,MAAM,EAAE,GAAG,CAAC,KAAK,CCCR,OAAO;EDAhB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,UAAU;EACnB,gBAAgB,EAAE,SAAS;CAC9B",
+    "sources": [
+        "../src/Components/Completed/completed.scss",
+        "../src/Components/Helpers/shared.scss"
+    ],
+    "names": [],
+    "file": "completed.css"
+}

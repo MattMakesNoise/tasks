@@ -22,10 +22,10 @@
     //Create array
     $task_array = array(
         'id' => $task->id,
-        'title' => $task->title,
-        'body' => $task->body,
-        'category_id' => $task->category_id,
-        'category' => $task->category
+        'title' => $task->title
+        // 'body' => $task->body,
+        // 'category_id' => $task->category_id,
+        // 'category' => $task->category
     );
 
     //Make JSON

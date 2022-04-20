@@ -2,7 +2,7 @@
     class Database {
         //db params
         private $host = 'localhost';
-        private $db_name = 'tasks_db';
+        private $db_name = 'tasks';
         private $username = 'root';
         private $password = '';
         private $conn;
