@@ -1,10 +1,19 @@
 @import "../Helpers/shared.scss";
 
 .app-header {
-    height: 10vh;
+    min-height: 10vh;
+    width: 100%;
     background-color: $dark-blue;
     color: $nearly-white;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    @include md {
+        font-size: 1.5rem;
+    }
+    h1 {
+        margin: 1rem;
+    }
 }

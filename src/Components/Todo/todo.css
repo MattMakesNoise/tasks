@@ -1,5 +1,6 @@
 .todo {
-  margin: 1rem .5rem;
+  font-size: .8rem;
+  margin: 1rem 0;
   padding: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,10 +8,25 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #F1F1E6;
   border-radius: 5px;
+  border: none;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+  .todo {
+    font-size: 1rem;
+    margin: 1rem .5rem;
+  }
+}
+
+.todo .todo-body {
+  padding-left: .5rem;
 }
 
 .todo .complete-delete {
@@ -33,6 +49,7 @@
   padding: .5rem;
   font-size: 1rem;
   border-radius: 5px;
+  border: none;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 0 .5rem;

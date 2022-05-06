@@ -1,9 +1,15 @@
 @import "../Helpers/shared.scss";
 
 .completed-outer {
+    min-height: 50vh;
+    max-width: 100%;
     @include borders;
     border: 1px solid $light-grey;
     margin: 1rem;
     padding: .5rem 1rem;
-    background-color: peachpuff;
+    background-color: $light-grey;
+    @include md {
+        min-height: 50vh;
+        width: 50%;
+    }
 }

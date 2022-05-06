@@ -3,7 +3,9 @@ import "../Header/header.css";
 
 const Header = () => {
     return (
-        <header className="app-header">Behold! I am the Header! Yes I am!</header>
+        <header className="app-header">
+            <h1>Track Your Tasks</h1>
+        </header>
     )
 }
 

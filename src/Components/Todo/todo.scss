@@ -1,12 +1,21 @@
 @import "../Helpers/shared.scss";
 
 .todo {
-    margin: 1rem .5rem;
+    font-size: .8rem;
+    margin: 1rem 0;
     padding: .5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: $nearly-white;
+    @include md {
+        font-size: 1rem;
+        margin: 1rem .5rem;
+    }
     @include borders;
+    .todo-body {
+        padding-left: .5rem;
+    }
     .complete-delete {
         display: flex;
     }

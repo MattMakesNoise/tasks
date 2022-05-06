@@ -1,3 +1,7 @@
+.App {
+  max-width: 100vw;
+}
+
 .app-main-outer {
   background-color: #F1F1E6;
 }
@@ -6,8 +10,46 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 80vh;
-  max-width: 80vw;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 990px) {
+  .app-main-outer .app-main-inner {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .app-main-outer .app-main-inner {
+    max-width: 1200px;
+  }
+}
+
+.app-main-outer .app-main-inner .task-lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .app-main-outer .app-main-inner .task-lists {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=App.css.map */

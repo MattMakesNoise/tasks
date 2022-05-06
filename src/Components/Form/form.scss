@@ -1,26 +1,51 @@
 @import "../Helpers/shared.scss";
 
-form {
-    height: 200px;
-    width: 600px;
+.form-wrapper {
+    max-width: 100%;
     margin: 1rem;
+    padding: .5rem;
     @include borders;
     background-color: $light-grey;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    input {
-        height: 50px;
-        padding: .5rem;
-        margin: 1rem;
-        @include borders;
+    @include md {
+        padding: 1rem;
     }
-    button {
-        @include button;
-        @include borders;
-        background-color: $dark-blue;
-        color: $nearly-white;
-        width: 100px;
-        margin: 1rem;
+    form {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        @include md {
+            width: 80%;
+        }
+        input {
+            font-family: 'Nunito', sans-serif;
+            font-size: .8rem;
+            height: 50px;
+            width: 90%;
+            padding: .5rem 1rem;
+            margin: 1rem .25rem 1rem .5rem;
+            @include borders;
+            @include md {
+                width: 75%;
+                margin: 1rem;
+                font-size: 1rem;
+            }
+        }
+        button {
+            @include button;
+            @include borders;
+            font-size: .8rem;
+            background-color: $dark-blue;
+            color: $nearly-white;
+            height: 50px;
+            width: 80px;
+            margin: 1rem .5rem 1rem .25rem;
+            @include md {
+                margin: 1rem;
+                width: 100px;
+                font-size: 1rem;
+            }
+        }
     }
+    
+    
 }

@@ -28,9 +28,11 @@ function App() {
             <div className='app-main-outer'>
                 <div className='app-main-inner'>
                     <TodosProvider>
-                        <Completed/>
                         <Form />
-                        <InProgress />
+                        <div className='task-lists'>
+                            <Completed/>
+                            <InProgress />
+                        </div>
                     </TodosProvider>
                 </div>
             </div>

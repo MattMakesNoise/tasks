@@ -21,16 +21,14 @@ const Form = () => {
         dispatch({type: ACTIONS.ADD_TASK, payload: {title: text}});
         setText("")
     }
-
-    console.log(todos);
     
     return(
-        <>
-        <form onSubmit={addTask}>
-            <input type="text" name="text" placeholder="Start typing to add a task" value={text} onChange={fillTask}/>
-            <button>Add Task</button>
-        </form>
-        </>
+        <div className="form-wrapper">
+            <form onSubmit={addTask}>
+                <input type="text" name="text" placeholder="Start typing to add a task" value={text} onChange={fillTask}/>
+                <button>Add</button>
+            </form>
+        </div>
     );
 }
 
