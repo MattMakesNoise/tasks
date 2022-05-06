@@ -30,7 +30,6 @@ const Form = () => {
             <input type="text" name="text" placeholder="Start typing to add a task" value={text} onChange={fillTask}/>
             <button>Add Task</button>
         </form>
-        {/* <pre>{JSON.stringify(todos)} </pre> */}
         </>
     );
 }

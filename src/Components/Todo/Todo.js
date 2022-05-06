@@ -11,6 +11,7 @@ const Todo = (props) => {
     // }
     // const [state, dispatch] = useReducer(reducer, initialState);
     const [todos, dispatch] = useContext(TodosContext);
+    console.log(todos)
 
     return(
         <div className="todo">
@@ -21,10 +22,9 @@ const Todo = (props) => {
             </div>
             <div className="complete-delete">
                 {props.complete === 0
-                    // ? <button className="complete" onClick={makeComplete}><i className="fas fa-check"></i></button>
-                    ? <button className="complete" onClick={() => dispatch({type: 'done', index: props.key})}><i className="fas fa-check"></i></button>
-                    : <button className="incomplete"><i className="fas fa-x"></i></button>}
-                <button className="delete"><i className="fas fa-trash-can"></i></button>
+                    ? <button className="complete" onClick={() => dispatch({type: ACTIONS.TASK_DONE, payload: {id: props.id}})}><i className="fas fa-check"></i></button>
+                    : <button className="incomplete" onClick={() => dispatch({type: ACTIONS.TASK_NOT_DONE, payload: {id: props.id}})}><i className="fas fa-x"></i></button>}
+                <button className="delete" onClick={() => dispatch({type: ACTIONS.DELETE_TASK, payload: {id: props.id}})}><i className="fas fa-trash-can"></i></button>
             </div>
         </div>
     )

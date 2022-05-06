@@ -18,8 +18,8 @@ function reducer(todos, action) {
             return todos.map((task) => task.id === action.payload.id ? {...task, complete: 1} : task);
         case ACTIONS.TASK_NOT_DONE:
             return todos.map((task) => task.id === action.payload.id ? {...task, complete: 0} : task);
-        // case ACTIONS.DELETE_TASK:
-        //     return {todos: state.todos.map((task, index) => index === action.index ? {...task, complete: 0} : task) };
+        case ACTIONS.DELETE_TASK:
+            return todos.filter(task => task.id !== action.payload.id);
         default:
             return todos; 
     }
