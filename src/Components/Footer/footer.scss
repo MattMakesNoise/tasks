@@ -1,5 +1,10 @@
-nav {
-    height: 100px;
-    background-color: blue;
-    color: white;
+@import "../Helpers/shared.scss";
+
+.footer-main {
+    height: 10vh;
+    background-color: $dark-blue;
+    color: $nearly-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

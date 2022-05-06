@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAC;EACH,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,IAAI;EACtB,YAAY,EAAE,KAAK;EACnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACtB",
+    "mappings": "AAEA,AAAA,WAAW,CAAC;EACR,MAAM,EAAE,IAAI;EACZ,gBAAgB,ECFR,OAAO;EDGf,KAAK,ECFM,OAAO;EDGlB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CACtB",
     "sources": [
-        "header.scss"
+        "header.scss",
+        "../Helpers/shared.scss"
     ],
     "names": [],
     "file": "header.css"

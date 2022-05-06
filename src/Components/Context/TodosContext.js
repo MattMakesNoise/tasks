@@ -1,33 +1,35 @@
 import React, { createContext, useReducer } from "react";
+import {newTodo} from "../Form/Form.js";
 
 export const TodosContext = createContext();
 
-function reducer(state, action) {
+export const ACTIONS = {
+    ADD_TASK: 'add-todo',
+    TASK_DONE: 'todo-complete',
+    TASK_NOT_DONE: 'todo-incomplete',
+    DELETE_TASK: 'delete-todo'
+}
+
+function reducer(todos, action) {
     switch(action.type) {
-        case "add-todo":
-            return {todos: [...state.todos, {text: action.text, complete: 0}] };
+        case ACTIONS.ADD_TASK:
+            return [...todos, newTodo(action.payload.title)];
+        case ACTIONS.TASK_DONE:
+            return todos.map((task) => task.id === action.payload.id ? {...task, complete: 1} : task);
+        case ACTIONS.TASK_NOT_DONE:
+            return todos.map((task) => task.id === action.payload.id ? {...task, complete: 0} : task);
+        // case ACTIONS.DELETE_TASK:
+        //     return {todos: state.todos.map((task, index) => index === action.index ? {...task, complete: 0} : task) };
         default:
-            return state; 
+            return todos; 
     }
 }
 
 export const TodosProvider = (props) => {
-    const [{todos}, dispatch] = useReducer(reducer, {todos: []});
-    // const [todos, setTodos] = useState([
-    //     {
-    //         id: 1,
-    //         title: "Please work",
-    //         complete: "0"
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "I'm done",
-    //         complete: "1"
-    //     }
-    // ]);
+    const [todos, dispatch] = useReducer(reducer, []);
 
     return(
-        <TodosContext.Provider value={[{todos}, dispatch]}>
+        <TodosContext.Provider value={[todos, dispatch]}>
             {props.children}
         </TodosContext.Provider>
     );

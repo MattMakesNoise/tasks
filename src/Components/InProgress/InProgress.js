@@ -3,19 +3,18 @@ import Todo from "../Todo/Todo";
 import "./inprogress.css";
 import { TodosContext } from "../Context/TodosContext";
 
-const InProgress = () => {
+const InProgress = (props) => {
     // let todos = props.list;
     // const { todoList, setTodoList} = useContext(TodosContext);
-    const [todos, setTodos] = useContext(TodosContext);
-    // console.log(todoList);
+    // const [todos, setTodos] = useContext(TodosContext);
+    const [todos, dispatch] = useContext(TodosContext);
 
     return (
         <div className="inprogress-outer">
-            {todos && todos.map((task) => {
+            {todos.map((task, index) => {
                 return (
-                    task.complete === "0" 
-                        ? <Todo key={task.id} title={task.title} body={task.body} completed={task.complete} /> 
-                        : <></>
+                    task.complete === 0 ? <Todo key={index} title={task.title} complete={task.complete} dispatch={dispatch}/> : <></> 
+                    // <Todo key={task.id} title={task.title} complete={task.complete} /> 
                 )
             })}
         </div>

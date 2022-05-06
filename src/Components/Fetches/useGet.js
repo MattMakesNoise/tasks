@@ -8,8 +8,9 @@ const useGet = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get("http://localhost/api/post/read.php")
+        axios.get("http://localhost:8080/task-tracker/tasks/api/read.php")
             .then((response) => {
+                console.log(response.data.data);
                 setData(response.data);
             }).catch((error) => {
                 setError(error);

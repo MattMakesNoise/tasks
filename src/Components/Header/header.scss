@@ -1,11 +1,10 @@
 @import "../Helpers/shared.scss";
 
-header {
-    height: 100px;
+.app-header {
+    height: 10vh;
     background-color: $dark-blue;
-    color: $nearly-black;
+    color: $nearly-white;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
 }

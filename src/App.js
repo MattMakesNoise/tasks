@@ -5,32 +5,33 @@ import Completed from "./Components/Completed/Completed";
 import Form from "./Components/Form/Form";
 import InProgress from './Components/InProgress/InProgress';
 import Footer from './Components/Footer/Footer';
-import useGet from './Components/Fetches/useGet';
+// import useGet from './Components/Fetches/useGet';
 import { TodosProvider } from './Components/Context/TodosContext';
 
 function App() {
-    let todos;
+    // let todos = [{title: "Brap", completed: 0}];
 
-    const {data, loading, error} = useGet();
+    // const {data, loading, error} = useGet();
 
-    if(loading) return <div>Loading...</div>;
+    // if(loading) return <div>Loading...</div>;
 
-    if(error) console.log(error);
+    // if(error) console.log(error);
 
-    if(data) {
-        todos = data.data;
-        console.log(todos);
-    }
+    // if(data) {
+    //     console.log(data);
+    //     todos = data.data;
+    //     console.log(todos);
+    // }
     return (
         <div className="App">
             <Header />
             <div className='app-main-outer'>
                 <div className='app-main-inner'>
-                    {/* <TodosProvider>
+                    <TodosProvider>
                         <Completed/>
                         <Form />
-                        <InProgress/>
-                    </TodosProvider> */}
+                        <InProgress />
+                    </TodosProvider>
                 </div>
             </div>
             

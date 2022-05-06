@@ -1,7 +1,7 @@
-header {
-  height: 100px;
-  background-color: aqua;
-  color-adjust: black;
+.app-header {
+  height: 10vh;
+  background-color: #132257;
+  color: #F1F1E6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

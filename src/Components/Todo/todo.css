@@ -24,6 +24,7 @@
 }
 
 .complete,
+.incomplete,
 .delete {
   text-decoration: none;
   text-transform: uppercase;
@@ -39,18 +40,21 @@
 }
 
 .complete:hover,
+.incomplete:hover,
 .delete:hover {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
 }
 
 .complete:active,
+.incomplete:active,
 .delete:active {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }
 
-.complete {
+.complete,
+.incomplete {
   background-color: green;
 }
 

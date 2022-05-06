@@ -1,15 +1,16 @@
 @import "../Helpers/shared.scss";
 
 form {
-    height: 400px;
+    height: 200px;
     width: 600px;
     margin: 1rem;
     @include borders;
-    border: 1px solid red;
+    background-color: $light-grey;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     input {
+        height: 50px;
         padding: .5rem;
         margin: 1rem;
         @include borders;

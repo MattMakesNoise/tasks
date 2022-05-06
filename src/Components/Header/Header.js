@@ -3,7 +3,7 @@ import "../Header/header.css";
 
 const Header = () => {
     return (
-        <header>Behold! I am the Header! Yes I am!</header>
+        <header className="app-header">Behold! I am the Header! Yes I am!</header>
     )
 }
 

@@ -15,13 +15,15 @@
     display: none;
 }
 .complete,
+.incomplete,
 .delete {
     @include button;
     @include borders;
     margin: 0 .5rem;
     color: $nearly-white;
 }
-.complete {
+.complete, 
+.incomplete {
     background-color: green;
 }
 .delete {

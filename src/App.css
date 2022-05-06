@@ -6,7 +6,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1200px;
-  margin: auto;
+  min-height: 80vh;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=App.css.map */

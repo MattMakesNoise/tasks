@@ -3,7 +3,7 @@ import "../Footer/footer.css";
 
 const Footer = () => {
     return (
-        <nav>Behold! I am the Footer!</nav>
+        <nav className="footer-main">Behold! I am the Footer!</nav>
     )
 }
 
